@@ -308,12 +308,12 @@
         {% endfor %}
 
         <!-- All Other Projects -->
-        {% if matched_projects %}
+        {% if matched_projects or projects %}
         <h2 class="subtitle bytesized-font has-text-white" style="margin-top: 2rem; margin-bottom: 2rem;">All Projects</h2>
         {% endif %}
         
         {% for project in projects %}
-        {% if project not in matched_projects %}
+        {% if project not in matched_projects or matched_projects|length == 0 %}
         <div class="project-card">
             <!-- View Details Button (Top Right Corner) -->
             <a href="{% url 'project_detail' project.id %}" class="button is-small view-button">View</a>
@@ -418,7 +418,7 @@
         {% empty %}
         <p class="notification is-info bytesized-font" style="background-color: #141415;">
             No projects available yet. Create one to get started!
-          </p>          
+        </p>          
         {% endfor %}
     </div>
 </section>

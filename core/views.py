@@ -31,7 +31,7 @@ def home(request):
     cache_key_projects = f'home_projects_{timezone.now().date()}'
     projects = cache.get(cache_key_projects)
     if not projects:
-        projects = Project.objects.all().order_by('-created_at')
+        projects = list(Project.objects.all().order_by('-created_at'))  # Convert to list
         project_requests = {}
         
         for project in projects:
@@ -86,7 +86,7 @@ def home(request):
             project.forks_count = github_data.get('forks_count')
             project.readme_html = github_data.get('readme_html')
 
-            # Payment URLs (cached with profile data if needed)
+            # Payment URLs
             profile = Profile.objects.filter(user=project.owner).first()
             project.buy_me_a_coffee = profile.buy_me_a_coffee if profile and project.buy_me_a_coffee else None
             project.patreon = profile.patreon if profile and project.patreon else None
@@ -105,6 +105,7 @@ def home(request):
         matched_projects = [p for p in projects if any(skill in user_skills for skill in p.desired_skills.values_list('name', flat=True))]
         cache.set(cache_key_matched, matched_projects, 3600)  # Cache for 1 hour
 
+    logger.info(f"Projects count: {len(projects)}, Matched projects count: {len(matched_projects)}")
     return render(request, 'home.html', {
         'projects': projects,
         'project_requests': project_requests,
