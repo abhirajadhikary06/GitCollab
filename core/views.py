@@ -396,3 +396,6 @@ def manage_requests(request):
             req.save()
 
     return render(request, 'manage_requests.html', {'requests': contributor_requests})
+
+def learn_more(request):
+    return render(request, 'learn_more.html')
