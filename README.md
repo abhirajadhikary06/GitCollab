@@ -1,4 +1,3 @@
-
 # GitCollab
 
 ## Project Description
@@ -81,10 +80,10 @@ Built with Django, Bulma CSS, and JavaScript, and deployed via Render, it offers
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/yourrepo.git
+git clone https://github.com/abhirajadhikary06/GitCollab.git
 
 # Navigate into the repo
-cd yourrepo
+cd GitCollab
 
 # Create a virtual environment
 python -m venv venv
