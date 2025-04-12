@@ -106,17 +106,17 @@ python manage.py migrate
 # Start the server
 python manage.py runserver
 
-
+```
 ---
 
-Live Link
+## Live Link
 
 https://yourprojectname.onrender.com
 
 
 ---
 
-Tech Stack
+## Tech Stack
 
 Django: Backend framework for APIs and database interaction
 
@@ -132,7 +132,7 @@ Render: Hosting and deployment
 
 ---
 
-##Contribution
+## Contribution
 
 Contributions are welcome! Clone the repo, explore the features, and help build the future of open-source collaboration.
 
