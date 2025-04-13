@@ -132,9 +132,9 @@ LOGOUT_REDIRECT_URL = '/login/'
 # Static Files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "core/static-x",  # App-level static files
+    BASE_DIR / "core" / "static",
 ]
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 CACHES = {
     'default': {
