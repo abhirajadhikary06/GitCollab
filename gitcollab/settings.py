@@ -124,13 +124,15 @@ SOCIAL_AUTH_GITHUB_KEY = os.getenv('SOCIAL_AUTH_GITHUB_KEY')
 SOCIAL_AUTH_GITHUB_SECRET = os.getenv('SOCIAL_AUTH_GITHUB_SECRET')
 SOCIAL_AUTH_GITHUB_SCOPE = ['user', 'repo']  # For collaborator invites
 
+
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/home/'
 LOGOUT_REDIRECT_URL = '/login/'
 
-STATIC_URL = '/static/'  # URL prefix for static files
+# Static Files
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Project-level static files (optional)
+    BASE_DIR / "core/static",  # App-level static files
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
