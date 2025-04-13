@@ -158,11 +158,24 @@
       color: black;
       margin-right: 0.5rem;
     }
+
+    .button-link {
+    display: inline-block;
+    text-decoration: none;
+    }
     
     .secondary-btn {
       background-color: #1f1f1f;
       color: white;
       border: 1px solid #444;
+      margin: 0.5rem;
+      padding: 0.8rem 1.4rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
     }
     
     .feature {
@@ -671,9 +684,8 @@
         </button>
       </a>
       
-      <a href="{% url 'learn_more' %}" style="text-decoration: none;">
-
-      <button class="secondary-btn">Learn how it works</button>
+      <a href="{% url 'learn_more' %}" class="button-link">
+        <button class="secondary-btn">Learn how it works</button>
       </a>
     </div>
     
