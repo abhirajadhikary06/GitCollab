@@ -92,7 +92,6 @@
   </div>
 </section>
 
-{% block extra_styles %}
 <style>
   /* Dark theme form inputs */
   .dark-input {
@@ -175,9 +174,7 @@
     z-index: 1000;
   }
 </style>
-{% endblock %}
 
-{% block extra_scripts %}
 <script>
   // Auto-hide flash messages
   document.addEventListener('DOMContentLoaded', function () {
@@ -203,4 +200,12 @@
     }
   });
 </script>
+{% endblock %}
+
+{% block extra_styles %}
+<!-- Additional styles can go here -->
+{% endblock %}
+
+{% block extra_scripts %}
+<!-- Additional scripts can go here -->
 {% endblock %}
