@@ -1,0 +1,11 @@
+Django
+social-auth-app-django
+requests
+markdown
+psycopg2-binary
+django-environ
+gunicorn
+whitenoise
+django-cors-headers
+django-redis
+django-debug-toolbar
