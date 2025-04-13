@@ -135,6 +135,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "core" / "static",
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CACHES = {
     'default': {
