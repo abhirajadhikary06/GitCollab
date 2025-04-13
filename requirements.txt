@@ -1,6 +1,8 @@
-Django
+django
+python-dotenv
 social-auth-app-django
-requests
+gunicorn
+whitenoise
 markdown
 psycopg2-binary
 django-environ
