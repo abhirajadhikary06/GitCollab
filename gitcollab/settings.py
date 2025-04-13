@@ -132,7 +132,7 @@ LOGOUT_REDIRECT_URL = '/login/'
 # Static Files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "core/static",  # App-level static files
+    BASE_DIR / "core/static-x",  # App-level static files
 ]
 STATIC_ROOT = BASE_DIR / "static"
 
