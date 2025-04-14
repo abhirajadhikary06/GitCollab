@@ -18,12 +18,12 @@ def login_view(request):
         return redirect('home')
     return render(request, 'login.html')
 
-@login_required
+@login_required(login_url='/')
 def logout_view(request):
     auth_logout(request)
     return redirect('login')
 
-@login_required
+@login_required(login_url='/')
 def home(request):
     user_profile, created = Profile.objects.get_or_create(user=request.user)
     
@@ -112,7 +112,7 @@ def home(request):
         'matched_projects': matched_projects
     })
 
-@login_required
+@login_required(login_url='/')
 def create_project(request):
     if request.method == 'POST':
         repo_link = request.POST['repo_link'].strip()
@@ -154,7 +154,7 @@ def create_project(request):
 import logging
 logger = logging.getLogger(__name__)
 
-@login_required
+@login_required(login_url='/')
 def project_detail(request, project_id):
     project = get_object_or_404(Project, id=project_id)
 
@@ -205,7 +205,7 @@ def project_detail(request, project_id):
 
     return render(request, 'project_detail.html', {'project': project})
 
-@login_required
+@login_required(login_url='/')
 def profile_view(request):
     # Get or create the user's profile
     profile, created = Profile.objects.get_or_create(user=request.user)
@@ -287,7 +287,7 @@ def profile_view(request):
     }
     return render(request, 'profile.html', context)
 
-@login_required
+@login_required(login_url='/')
 def manage_requests(request):
     # Get projects owned by the current user
     projects = Project.objects.filter(owner=request.user)
